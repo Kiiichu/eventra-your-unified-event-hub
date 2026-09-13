@@ -2,7 +2,62 @@ import { createContext, useContext, useState, useCallback, type ReactNode } from
 
 export type Lang = "ms" | "en";
 
-export const labels = {
+export interface Labels {
+  appName: string;
+  tagline: string;
+  greeting: string;
+  homeTitle: string;
+  homeSubtitle: string;
+  discover: string;
+  schedule: string;
+  myEvents: string;
+  notifications: string;
+  profile: string;
+  submitEvent: string;
+  filter: string;
+  district: string;
+  category: string;
+  allDistricts: string;
+  allCategories: string;
+  register: string;
+  getQRTicket: string;
+  free: string;
+  going: string;
+  nearYou: string;
+  viewCalendar: string;
+  communityHelp: string;
+  inviteFriends: string;
+  searchPlaceholder: string;
+  today: string;
+  thisWeek: string;
+  open: string;
+  market: string;
+  culture: string;
+  sports: string;
+  education: string;
+  kids: string;
+  details: string;
+  scanAtGate: string;
+  qrShownOnRegister: string;
+  registerNow: string;
+  upcoming: string;
+  past: string;
+  saved: string;
+  noNotifications: string;
+  submitForReview: string;
+  eventTitle: string;
+  venue: string;
+  description: string;
+  organizerContact: string;
+  uploadPoster: string;
+  language: string;
+  notificationSettings: string;
+  logout: string;
+  chatbotGreeting: string;
+  chatbotEscalate: string;
+}
+
+export const labels: Record<Lang, Labels> = {
   ms: {
     appName: "EVENTRA",
     tagline: "Kemaman",
@@ -111,9 +166,7 @@ export const labels = {
     chatbotGreeting: "Hi! I'm the EVENTRA bot. Any event questions?",
     chatbotEscalate: "Contact PIC",
   },
-} as const;
-
-export type Labels = (typeof labels)["en"];
+};
 
 interface I18nContextValue {
   lang: Lang;
