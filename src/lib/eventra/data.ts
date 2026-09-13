@@ -141,7 +141,7 @@ export const events: Event[] = [
   },
 ];
 
-export const featuredEvent = events[0];
+export const featuredEvent = events[0]!;
 
 export interface MyEvent {
   id: string;
