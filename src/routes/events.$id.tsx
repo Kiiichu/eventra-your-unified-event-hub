@@ -29,7 +29,6 @@ export const Route = createFileRoute("/events/$id")({
 function EventDetailPage() {
   const { lang, t } = useI18n();
   const { event } = Route.useLoaderData();
-  const [selectedCategory, setSelectedCategory] = useState<Category>("all");
 
   const title = lang === "ms" ? event.titleMs : event.titleEn;
   const venue = lang === "ms" ? event.venueMs : event.venueEn;
