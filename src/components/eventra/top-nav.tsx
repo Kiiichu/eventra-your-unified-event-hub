@@ -59,7 +59,7 @@ export function TopNav() {
             to="/profile"
             className="grid size-9 place-items-center rounded-full bg-fresh font-display text-sm text-ink"
           >
-            AL
+            ZR
           </Link>
         </div>
       </div>

@@ -58,7 +58,7 @@ export function EventCard({ event }: EventCardProps) {
             params={{ id: event.id }}
             className="flex-1 rounded-xl bg-ink py-2.5 text-center text-sm font-bold text-canvas transition-colors hover:bg-canvas hover:text-ink"
           >
-            {t.getQRTicket}
+            {t.registerAutofill}
           </Link>
           <span className="font-mono text-[10px] text-ink/60">
             {event.price === 0 ? t.free : `${event.currency}${event.price}`}
