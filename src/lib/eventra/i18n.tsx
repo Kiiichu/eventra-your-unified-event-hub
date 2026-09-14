@@ -20,7 +20,15 @@ export interface Labels {
   allDistricts: string;
   allCategories: string;
   register: string;
-  getQRTicket: string;
+  registerAutofill: string;
+  autofillNotice: string;
+  autofillData: string;
+  editDetails: string;
+  registered: string;
+  registrationStatus: string;
+  chatSupport: string;
+  transferringPIC: string;
+  quickReplies: string;
   free: string;
   going: string;
   nearYou: string;
@@ -37,8 +45,8 @@ export interface Labels {
   education: string;
   kids: string;
   details: string;
-  scanAtGate: string;
-  qrShownOnRegister: string;
+  oneClickRegister: string;
+  detailsFromProfile: string;
   registerNow: string;
   upcoming: string;
   past: string;
@@ -76,7 +84,15 @@ export const labels: Record<Lang, Labels> = {
     allDistricts: "Seluruh Daerah",
     allCategories: "Semua",
     register: "Daftar",
-    getQRTicket: "Daftar & QR",
+    registerAutofill: "Daftar (Isi Automatik)",
+    autofillNotice: "Butiran anda diisi automatik dari profil.",
+    autofillData: "Data isi automatik",
+    editDetails: "Kemas kini butiran",
+    registered: "Telah daftar",
+    registrationStatus: "Status pendaftaran",
+    chatSupport: "Sokongan AI & PIC",
+    transferringPIC: "Menghubungkan anda kepada PIC acara…",
+    quickReplies: "Soalan lazim",
     free: "Percuma",
     going: "orang",
     nearYou: "Hampir Di Sini",
@@ -93,8 +109,8 @@ export const labels: Record<Lang, Labels> = {
     education: "Pendidikan",
     kids: "Kanak-kanak",
     details: "Detail",
-    scanAtGate: "Skod QR kehadiran",
-    qrShownOnRegister: "Dipaparkan semasa daftar",
+    oneClickRegister: "Daftar sekali klik",
+    detailsFromProfile: "Diambil dari profil anda",
     registerNow: "Daftar sekarang",
     upcoming: "Akan datang",
     past: "Lepas",
@@ -130,7 +146,15 @@ export const labels: Record<Lang, Labels> = {
     allDistricts: "All Districts",
     allCategories: "All",
     register: "Register",
-    getQRTicket: "Register & QR",
+    registerAutofill: "Register (Autofill)",
+    autofillNotice: "Your details are securely filled from your profile.",
+    autofillData: "Autofill data",
+    editDetails: "Edit details",
+    registered: "Registered",
+    registrationStatus: "Registration status",
+    chatSupport: "AI & PIC Support",
+    transferringPIC: "Transferring you to the event PIC…",
+    quickReplies: "Quick replies",
     free: "Free",
     going: "going",
     nearYou: "Near You",
@@ -147,8 +171,8 @@ export const labels: Record<Lang, Labels> = {
     education: "Education",
     kids: "Kids",
     details: "Details",
-    scanAtGate: "Scan attendance QR",
-    qrShownOnRegister: "Shown after registration",
+    oneClickRegister: "One-click register",
+    detailsFromProfile: "Pulled from your profile",
     registerNow: "Register now",
     upcoming: "Upcoming",
     past: "Past",

@@ -96,7 +96,7 @@ function HomePage() {
             <p className="font-mono text-[10px] uppercase tracking-widest text-sub">
               {t.greeting}
             </p>
-            <p className="font-display text-xl leading-none text-ink">Aisyah</p>
+            <p className="font-display text-xl leading-none text-ink">Zizan</p>
           </div>
           <div className="flex items-center gap-2">
             <LanguageToggle />
@@ -104,7 +104,7 @@ function HomePage() {
               to="/profile"
               className="grid size-9 place-items-center rounded-full bg-fresh font-display text-sm text-ink"
             >
-              AL
+              ZR
             </Link>
           </div>
         </div>
@@ -139,7 +139,7 @@ function HomePage() {
               params={{ id: featuredEvent.id }}
               className="rounded-full bg-ink px-5 py-3 text-sm font-bold text-canvas shadow-lg transition-colors hover:bg-canvas hover:text-ink"
             >
-              {t.getQRTicket}
+              {t.registerAutofill}
             </Link>
             <button className="rounded-full border-2 border-ink bg-canvas px-5 py-3 text-sm font-bold text-ink transition-colors hover:bg-ink/5">
               {t.viewCalendar}
