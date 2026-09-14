@@ -1,11 +1,7 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
-import { notFound } from "@tanstack/react-router";
+import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { Calendar, MapPin, Users, ArrowLeft, Share2, Bookmark } from "lucide-react";
-import { events } from "@/lib/eventra/data";
+import { events, categories } from "@/lib/eventra/data";
 import { useI18n } from "@/lib/eventra/i18n";
-import { CategoryChips } from "@/components/eventra/category-chips";
-import { useState } from "react";
-import { categories, type Category } from "@/lib/eventra/data";
 
 export const Route = createFileRoute("/events/$id")({
   component: EventDetailPage,
@@ -33,7 +29,6 @@ export const Route = createFileRoute("/events/$id")({
 function EventDetailPage() {
   const { lang, t } = useI18n();
   const { event } = Route.useLoaderData();
-  const [selectedCategory, setSelectedCategory] = useState<Category>("all");
 
   const title = lang === "ms" ? event.titleMs : event.titleEn;
   const venue = lang === "ms" ? event.venueMs : event.venueEn;
