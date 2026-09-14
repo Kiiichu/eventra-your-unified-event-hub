@@ -7,24 +7,22 @@ export function BottomNav() {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
 
   const navItems = [
-    { to: "/", icon: Home, label: t.discover },
-    { to: "/schedule", icon: Calendar, label: t.schedule },
-    { to: "/", icon: SlidersHorizontal, label: t.filter, hash: "filter", accent: true },
-    { to: "/notifications", icon: Bell, label: t.notifications },
-    { to: "/profile", icon: User, label: t.profile },
+    { to: "/", icon: Home, label: t.discover, accent: false },
+    { to: "/schedule", icon: Calendar, label: t.schedule, accent: false },
+    { to: "/", icon: SlidersHorizontal, label: t.filter, accent: true },
+    { to: "/notifications", icon: Bell, label: t.notifications, accent: false },
+    { to: "/profile", icon: User, label: t.profile, accent: false },
   ] as const;
 
   return (
     <nav className="fixed bottom-0 left-0 right-0 z-40 border-t-2 border-ink bg-canvas md:hidden">
       <div className="mx-auto grid h-16 max-w-lg grid-cols-5">
-        {navItems.map(({ to, icon: Icon, label, ...rest }, i) => {
-          const accent = "accent" in rest && rest.accent;
+        {navItems.map(({ to, icon: Icon, label, accent }, i) => {
           const active = !accent && pathname === to;
           return (
             <Link
               key={`${to}-${i}`}
               to={to}
-              hash={"hash" in rest ? rest.hash : undefined}
               className={`flex flex-col items-center justify-center gap-1 transition-colors ${
                 active ? "text-ink" : "text-sub"
               }`}
