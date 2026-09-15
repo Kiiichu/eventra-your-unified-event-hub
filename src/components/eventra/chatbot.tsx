@@ -1,10 +1,12 @@
 import { useState } from "react";
-import { MessageCircle, X, Send } from "lucide-react";
+import { MessageCircle, X, Send, PhoneForwarded } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import { useI18n } from "@/lib/eventra/i18n";
 
 export function Chatbot() {
   const { t } = useI18n();
   const [open, setOpen] = useState(false);
+  const [routing, setRouting] = useState(false);
   const [messages, setMessages] = useState<{ text: string; sender: "user" | "bot" }[]>([
     { text: t.chatbotGreeting, sender: "bot" },
   ]);
