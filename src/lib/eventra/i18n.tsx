@@ -63,6 +63,25 @@ export interface Labels {
   logout: string;
   chatbotGreeting: string;
   chatbotEscalate: string;
+  upgradeAccount: string;
+  upgradeSubtitle: string;
+  accountType: string;
+  publicUser: string;
+  becomeOrganizer: string;
+  becomeVendor: string;
+  organizerDesc: string;
+  vendorDesc: string;
+  organizationName: string;
+  businessName: string;
+  registrationNo: string;
+  eventExperience: string;
+  stallType: string;
+  reasonToUpgrade: string;
+  uploadDocuments: string;
+  submitApplication: string;
+  adminReviewNote: string;
+  pendingApproval: string;
+  pendingNote: string;
 }
 
 export const labels: Record<Lang, Labels> = {
@@ -127,6 +146,27 @@ export const labels: Record<Lang, Labels> = {
     logout: "Log keluar",
     chatbotGreeting: "Hai! Saya EVENTRA Bot. Ada soalan tentang acara?",
     chatbotEscalate: "Hubungi PIC",
+    upgradeAccount: "Naik Taraf Akaun",
+    upgradeSubtitle:
+      "Mohon menjadi penganjur acara atau vendor. Permohonan disemak oleh admin EVENTRA.",
+    accountType: "Jenis akaun",
+    publicUser: "Pengguna Awam",
+    becomeOrganizer: "Jadi Penganjur",
+    becomeVendor: "Jadi Vendor",
+    organizerDesc: "Cipta dan urus acara komuniti anda sendiri.",
+    vendorDesc: "Cari acara dan mohon buka gerai anda.",
+    organizationName: "Nama persatuan / organisasi",
+    businessName: "Nama perniagaan",
+    registrationNo: "No. pendaftaran",
+    eventExperience: "Pengalaman anjuran acara",
+    stallType: "Jenis gerai",
+    reasonToUpgrade: "Sebab permohonan",
+    uploadDocuments: "Muat naik dokumen sokongan",
+    submitApplication: "Hantar permohonan",
+    adminReviewNote: "Admin akan menyemak dalam 1–3 hari bekerja.",
+    pendingApproval: "Menunggu kelulusan admin",
+    pendingNote:
+      "Permohonan anda telah dihantar. Anda akan dimaklumkan sebaik sahaja admin meluluskannya.",
   },
   en: {
     appName: "EVENTRA",
@@ -189,6 +229,27 @@ export const labels: Record<Lang, Labels> = {
     logout: "Log out",
     chatbotGreeting: "Hi! I'm the EVENTRA bot. Any event questions?",
     chatbotEscalate: "Contact PIC",
+    upgradeAccount: "Upgrade Account",
+    upgradeSubtitle:
+      "Apply to become an event organizer or vendor. Applications are reviewed by EVENTRA admins.",
+    accountType: "Account type",
+    publicUser: "Public User",
+    becomeOrganizer: "Become an Organizer",
+    becomeVendor: "Become a Vendor",
+    organizerDesc: "Create and manage your own community events.",
+    vendorDesc: "Find events and apply to open your stall.",
+    organizationName: "Organization name",
+    businessName: "Business name",
+    registrationNo: "Registration no.",
+    eventExperience: "Event experience",
+    stallType: "Stall type",
+    reasonToUpgrade: "Reason for applying",
+    uploadDocuments: "Upload supporting documents",
+    submitApplication: "Submit application",
+    adminReviewNote: "Admins usually review within 1–3 working days.",
+    pendingApproval: "Waiting for admin approval",
+    pendingNote:
+      "Your application has been submitted. You'll be notified as soon as an admin approves it.",
   },
 };
 
