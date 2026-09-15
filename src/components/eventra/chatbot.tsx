@@ -1,10 +1,12 @@
 import { useState } from "react";
-import { MessageCircle, X, Send } from "lucide-react";
+import { MessageCircle, X, Send, PhoneForwarded } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import { useI18n } from "@/lib/eventra/i18n";
 
 export function Chatbot() {
   const { t } = useI18n();
   const [open, setOpen] = useState(false);
+  const [routing, setRouting] = useState(false);
   const [messages, setMessages] = useState<{ text: string; sender: "user" | "bot" }[]>([
     { text: t.chatbotGreeting, sender: "bot" },
   ]);
@@ -53,6 +55,12 @@ export function Chatbot() {
                 {m.text}
               </div>
             ))}
+            {routing && (
+              <div className="flex items-center gap-2 rounded-2xl border-2 border-dashed border-ink bg-gold px-3 py-2 text-sm font-bold text-ink">
+                <PhoneForwarded className="size-4 animate-pulse" />
+                {t.transferringPIC}
+              </div>
+            )}
           </div>
           <div className="border-t-2 border-ink p-3">
             <div className="flex gap-2">
@@ -72,11 +80,22 @@ export function Chatbot() {
               </button>
             </div>
             <button
-              onClick={() => send(t.chatbotEscalate)}
-              className="mt-2 w-full rounded-xl border-2 border-ink py-2 text-xs font-bold text-ink transition-colors hover:bg-ink/5"
+              onClick={() => {
+                setRouting(true);
+                setTimeout(() => setRouting(false), 1400);
+                send(t.chatbotEscalate);
+              }}
+              className="mt-2 w-full rounded-xl bg-coral py-2 text-xs font-bold text-canvas transition-opacity hover:opacity-90"
             >
               {t.chatbotEscalate}
             </button>
+            <Link
+              to="/chat"
+              onClick={() => setOpen(false)}
+              className="mt-2 block w-full rounded-xl border-2 border-ink py-2 text-center text-xs font-bold text-ink transition-colors hover:bg-ink/5"
+            >
+              {t.chatSupport}
+            </Link>
           </div>
         </div>
       )}

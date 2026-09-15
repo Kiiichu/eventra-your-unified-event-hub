@@ -1,5 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { Calendar, MapPin, Users, ArrowLeft, Share2, Bookmark } from "lucide-react";
+import { Calendar, MapPin, Users, ArrowLeft, Share2, Bookmark, ShieldCheck } from "lucide-react";
 import { events, categories } from "@/lib/eventra/data";
 import { useI18n } from "@/lib/eventra/i18n";
 
@@ -119,24 +119,41 @@ function EventDetailPage() {
         <div className="sticky top-24 space-y-5">
           <div className="rounded-3xl border-2 border-ink bg-canvas p-5">
             <p className="font-mono text-[10px] uppercase tracking-widest text-sub">
-              {t.scanAtGate}
+              {t.oneClickRegister}
             </p>
-            <div className="mt-3 grid grid-cols-6 gap-1.5 rounded-2xl border-2 border-dashed border-ink/30 bg-canvas p-4">
-              {Array.from({ length: 36 }).map((_, i) => (
-                <span
-                  key={i}
-                  className={`aspect-square rounded-[3px] ${
-                    [0, 2, 4, 7, 9, 11, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34].includes(i)
-                      ? "bg-ink"
-                      : "bg-ink/30"
-                  }`}
-                />
-              ))}
+            <div className="mt-3 rounded-2xl border-2 border-dashed border-ink/40 bg-fresh p-4">
+              <div className="flex items-center gap-2">
+                <ShieldCheck className="size-4 text-ink" />
+                <span className="font-mono text-[10px] uppercase tracking-widest text-ink">
+                  {t.autofillData}
+                </span>
+              </div>
+              <dl className="mt-3 space-y-1.5 text-sm">
+                <div className="flex justify-between gap-3">
+                  <dt className="text-ink/70">Nama / Name</dt>
+                  <dd className="font-bold text-ink">Zizan Razak</dd>
+                </div>
+                <div className="flex justify-between gap-3">
+                  <dt className="text-ink/70">E-mel / Email</dt>
+                  <dd className="font-bold text-ink">zizan.razak@email.com</dd>
+                </div>
+                <div className="flex justify-between gap-3">
+                  <dt className="text-ink/70">Telefon / Phone</dt>
+                  <dd className="font-bold text-ink">+60 13-555 0192</dd>
+                </div>
+              </dl>
+              <p className="mt-2 text-xs text-ink/70">{t.detailsFromProfile}</p>
             </div>
-            <p className="mt-2 text-xs text-sub">{t.qrShownOnRegister}</p>
+            <p className="mt-2 text-xs text-sub">{t.autofillNotice}</p>
             <button className="mt-4 w-full rounded-xl bg-ink py-3 text-sm font-bold text-canvas transition-colors hover:bg-coral">
-              {t.registerNow}
+              {t.registerAutofill}
             </button>
+            <Link
+              to="/profile"
+              className="mt-2 block w-full rounded-xl border-2 border-ink py-2.5 text-center text-sm font-bold text-ink transition-colors hover:bg-ink/5"
+            >
+              {t.editDetails}
+            </Link>
           </div>
 
           <div className="rounded-3xl border-2 border-ink bg-gold p-5">
