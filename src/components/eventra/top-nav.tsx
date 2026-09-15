@@ -50,10 +50,10 @@ export function TopNav() {
             />
           </div>
           <Link
-            to="/submit"
+            to="/upgrade"
             className="hidden rounded-full bg-coral px-3 py-1.5 text-sm font-bold text-canvas transition-colors hover:opacity-90 sm:inline-block"
           >
-            + {t.submitEvent}
+            ↑ {t.upgradeAccount}
           </Link>
           <Link
             to="/profile"

@@ -110,6 +110,17 @@ function ProfilePage() {
       </div>
 
       <Link
+        to="/upgrade"
+        className="mt-3 flex w-full items-center justify-between rounded-3xl border-2 border-ink bg-coral p-4 transition-opacity hover:opacity-90"
+      >
+        <div>
+          <span className="font-bold text-canvas">{t.upgradeAccount}</span>
+          <p className="text-xs text-canvas/80">{t.upgradeSubtitle}</p>
+        </div>
+        <ChevronRight className="size-4 shrink-0 text-canvas" />
+      </Link>
+
+      <Link
         to="/chat"
         className="mt-3 flex w-full items-center justify-between rounded-3xl border-2 border-ink bg-gold p-4 transition-colors hover:bg-gold/80"
       >

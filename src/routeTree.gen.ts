@@ -14,7 +14,7 @@ import { Route as ChatRouteImport } from './routes/chat'
 import { Route as NotificationsRouteImport } from './routes/notifications'
 import { Route as ProfileRouteImport } from './routes/profile'
 import { Route as ScheduleRouteImport } from './routes/schedule'
-import { Route as SubmitRouteImport } from './routes/submit'
+import { Route as UpgradeRouteImport } from './routes/upgrade'
 import { Route as EventsIdRouteImport } from './routes/events.$id'
 
 const IndexRoute = IndexRouteImport.update({
@@ -42,9 +42,9 @@ const ScheduleRoute = ScheduleRouteImport.update({
   path: '/schedule',
   getParentRoute: () => rootRouteImport,
 } as any)
-const SubmitRoute = SubmitRouteImport.update({
-  id: '/submit',
-  path: '/submit',
+const UpgradeRoute = UpgradeRouteImport.update({
+  id: '/upgrade',
+  path: '/upgrade',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EventsIdRoute = EventsIdRouteImport.update({
@@ -59,7 +59,7 @@ export interface FileRoutesByFullPath {
   '/notifications': typeof NotificationsRoute
   '/profile': typeof ProfileRoute
   '/schedule': typeof ScheduleRoute
-  '/submit': typeof SubmitRoute
+  '/upgrade': typeof UpgradeRoute
   '/events/$id': typeof EventsIdRoute
 }
 export interface FileRoutesByTo {
@@ -68,7 +68,7 @@ export interface FileRoutesByTo {
   '/notifications': typeof NotificationsRoute
   '/profile': typeof ProfileRoute
   '/schedule': typeof ScheduleRoute
-  '/submit': typeof SubmitRoute
+  '/upgrade': typeof UpgradeRoute
   '/events/$id': typeof EventsIdRoute
 }
 export interface FileRoutesById {
@@ -78,7 +78,7 @@ export interface FileRoutesById {
   '/notifications': typeof NotificationsRoute
   '/profile': typeof ProfileRoute
   '/schedule': typeof ScheduleRoute
-  '/submit': typeof SubmitRoute
+  '/upgrade': typeof UpgradeRoute
   '/events/$id': typeof EventsIdRoute
 }
 export interface FileRouteTypes {
@@ -89,7 +89,7 @@ export interface FileRouteTypes {
     | '/notifications'
     | '/profile'
     | '/schedule'
-    | '/submit'
+    | '/upgrade'
     | '/events/$id'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -98,7 +98,7 @@ export interface FileRouteTypes {
     | '/notifications'
     | '/profile'
     | '/schedule'
-    | '/submit'
+    | '/upgrade'
     | '/events/$id'
   id:
     | '__root__'
@@ -107,7 +107,7 @@ export interface FileRouteTypes {
     | '/notifications'
     | '/profile'
     | '/schedule'
-    | '/submit'
+    | '/upgrade'
     | '/events/$id'
   fileRoutesById: FileRoutesById
 }
@@ -117,7 +117,7 @@ export interface RootRouteChildren {
   NotificationsRoute: typeof NotificationsRoute
   ProfileRoute: typeof ProfileRoute
   ScheduleRoute: typeof ScheduleRoute
-  SubmitRoute: typeof SubmitRoute
+  UpgradeRoute: typeof UpgradeRoute
   EventsIdRoute: typeof EventsIdRoute
 }
 
@@ -158,11 +158,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ScheduleRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/submit': {
-      id: '/submit'
-      path: '/submit'
-      fullPath: '/submit'
-      preLoaderRoute: typeof SubmitRouteImport
+    '/upgrade': {
+      id: '/upgrade'
+      path: '/upgrade'
+      fullPath: '/upgrade'
+      preLoaderRoute: typeof UpgradeRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/events/$id': {
@@ -181,7 +181,7 @@ const rootRouteChildren: RootRouteChildren = {
   NotificationsRoute: NotificationsRoute,
   ProfileRoute: ProfileRoute,
   ScheduleRoute: ScheduleRoute,
-  SubmitRoute: SubmitRoute,
+  UpgradeRoute: UpgradeRoute,
   EventsIdRoute: EventsIdRoute,
 }
 export const routeTree = rootRouteImport

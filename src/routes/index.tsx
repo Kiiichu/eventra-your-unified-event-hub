@@ -73,16 +73,17 @@ function HomePage() {
           </div>
           <div className="rounded-2xl border-2 border-ink bg-gold p-4">
             <p className="font-mono text-[10px] uppercase tracking-widest text-sub">
-              {t.inviteFriends}
+              {t.accountType}
             </p>
             <p className="mt-1 font-display text-lg leading-tight text-ink">
-              {t.communityHelp}
+              {t.becomeOrganizer} / {t.becomeVendor}
             </p>
+            <p className="mt-1 text-xs text-ink/70">{t.vendorDesc}</p>
             <Link
-              to="/submit"
+              to="/upgrade"
               className="mt-3 inline-block w-full rounded-xl bg-ink py-2 text-center text-sm font-bold text-canvas transition-colors hover:opacity-90"
             >
-              {t.submitEvent}
+              {t.upgradeAccount}
             </Link>
           </div>
         </div>
