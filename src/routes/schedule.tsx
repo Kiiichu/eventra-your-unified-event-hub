@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { Calendar, MapPin, QrCode } from "lucide-react";
+import { Calendar, CheckCircle2 } from "lucide-react";
 import { useI18n } from "@/lib/eventra/i18n";
 import { myEvents } from "@/lib/eventra/data";
 
@@ -87,8 +87,13 @@ function SchedulePage() {
               </div>
             </div>
             <div className="hidden shrink-0 flex-col items-end gap-1 sm:flex">
-              <QrCode className="size-8 text-ink" />
-              <span className="font-mono text-[10px] uppercase tracking-widest text-sub">QR</span>
+              <span className="flex items-center gap-1 rounded-full border-2 border-ink bg-fresh px-3 py-1 text-xs font-bold text-ink">
+                <CheckCircle2 className="size-3.5" />
+                {t.registered}
+              </span>
+              <span className="font-mono text-[10px] uppercase tracking-widest text-sub">
+                {t.registrationStatus}
+              </span>
             </div>
           </Link>
         ))}
